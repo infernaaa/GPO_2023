@@ -1,0 +1,69 @@
+//Создание БД//
+create table import_files_x (
+  id int primary key not null,
+    name varchar (128) not null,
+  create_date date not null
+);
+
+create table import_files_y (
+  id int not null unique references import_files_x (id),
+    name varchar (128) not null,
+  create_date date not null
+);
+
+create table detectors (
+  id int primary key not null,
+  name varchar(20) not null
+);
+
+create table array_measures (
+  id int primary key not null,
+  id_files int not null,
+  foreign key (id_files) references import_files_y(id)
+);
+
+create table detector_in_measure (
+  id int primary key not null,
+  id_measure int not null,
+  id_detector int not null,
+  time_values real[] not null,
+  aplitude_values real[] not null,
+  foreign key (id_measure) references array_measures(id),
+  foreign key (id_detector) references detectors(id)
+);
+
+create table bool_measures (
+  id int primary key not null,
+  id_files int not null,
+  foreign key (id_files) references import_files_x(id)
+);
+
+create table detector_in_bool_measure (
+  id int primary key not null,
+  id_measure int not null,
+  id_detector int not null,
+  defect_state bool not null,
+  foreign key (id_detector) references detectors(id),
+  foreign key (id_measure) references bool_measures(id)
+)
+
+//Вставка данных//
+INSERT INTO import_files_x (name, create_date) VALUES (%s, %s)
+INSERT INTO import_files_y (name, create_date) VALUES (%s, %s)
+INSERT INTO array_measures (id_files) VALUES (%s)
+INSERT INTO detector_in_measure (id_measure, id_detector, time_values, amplitude_values) VALUES (%s, %s, %s, %s)
+INSERT INTO detectors (name) VALUES (%s)
+INSERT INTO detector_in_bool_measure (id_measure, id_detector, defect_state) VALUES (%s, %s, %s)
+INSERT INTO bool_measures (id_files) VALUES (%s)
+
+//SQL запрос//
+SELECT x.name, y.name, d.name, dim.id_measure, dim.time_values, dim.aplitude_values, dbm.defect_state
+FROM import_files_x x
+LEFT JOIN import_files_y y ON x.id = y.id
+LEFT JOIN array_measures am ON y.id = am.id_files
+LEFT JOIN detector_in_measure dim ON am.id = dim.id_measure
+LEFT JOIN detectors d ON dim.id_detector = d.id
+LEFT JOIN bool_measures bm ON x.id = bm.id_files
+LEFT JOIN detector_in_bool_measure dbm ON bm.id = dbm.id_measure
+WHERE x.name = 'x_file_1'
+ORDER BY d.name
