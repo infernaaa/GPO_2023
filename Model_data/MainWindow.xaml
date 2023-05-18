@@ -1,0 +1,43 @@
+﻿<Window x:Class="Model_data.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Model_data" 
+        xmlns:ScottPlot="clr-namespace:ScottPlot;assembly=ScottPlot.WPF"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="600"/>
+                <!-- Ширина левой области 600 -->
+                <ColumnDefinition Width="*"/>
+                <!-- Оставшееся пространство занимает правая область -->
+            </Grid.ColumnDefinitions>
+            <!-- Левая область -->
+            <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1">
+                <ScottPlot:WpfPlot x:Name="wpf_plot" Margin="0,-1,10,84" Panel.ZIndex="0"/>
+
+            </Border>
+            <!-- Правая область -->
+            <Grid Grid.Column="1" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Первая строка содержит поля ввода -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Вторая строка содержит кнопку -->
+                </Grid.RowDefinitions>
+                <Label Content="Имя файла" Grid.Row="0" Margin="0,13,0,17" Grid.RowSpan="2"/>
+                <TextBox Grid.Row="1" x:Name="TextBox_File_Name" Margin="0,26,10,-22" IsReadOnly="True"/>
+                <Label Content="Номер детектора" Grid.Row="1" Margin="0,90,0,-90"/>
+                <TextBox Grid.Row="1" x:Name="TextBox_Number_Detector" Margin="0,133,10,-133"  IsReadOnly="True"/>
+                <Label Content="Номер строки" Grid.Row="1" Margin="0,196,0,-196"/>
+                <TextBox Grid.Row="1"  x:Name="TextBox_Number_Str" Margin="0,226,10,-226" IsReadOnly="True"/>
+
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

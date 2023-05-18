@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7d482610-55bc-41e7-8436-7b58ebdc4d6d": {
+      "ProjectGuid": "7d482610-55bc-41e7-8436-7b58ebdc4d6d",
+      "DisplayName": "Preprocess_data",
+      "ColorIndex": 0
+    },
+    "3bd81e68-eac4-4186-9b30-b29de7da508d": {
+      "ProjectGuid": "3bd81e68-eac4-4186-9b30-b29de7da508d",
+      "DisplayName": "Model_data",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
