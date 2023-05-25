@@ -23,3 +23,28 @@ C:\Users\infernaaa\Desktop\GPO_2023\Model_data\obj\Debug\Model_data.csproj.CoreC
 C:\Users\infernaaa\Desktop\GPO_2023\Model_data\obj\Debug\Model_data.csproj.CopyComplete
 C:\Users\infernaaa\Desktop\GPO_2023\Model_data\obj\Debug\Model_data.exe
 C:\Users\infernaaa\Desktop\GPO_2023\Model_data\obj\Debug\Model_data.pdb
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\bin\Debug\Model_data.exe.config
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\bin\Debug\Model_data.exe
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\bin\Debug\Model_data.pdb
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\bin\Debug\ScottPlot.dll
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\bin\Debug\ScottPlot.WPF.dll
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\bin\Debug\System.Drawing.Common.dll
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\bin\Debug\System.Numerics.Vectors.dll
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\bin\Debug\System.ValueTuple.dll
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\bin\Debug\ScottPlot.xml
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\bin\Debug\System.Numerics.Vectors.xml
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\bin\Debug\System.ValueTuple.xml
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\Model_data.csproj.AssemblyReference.cache
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\Model_data.csproj.SuggestedBindingRedirects.cache
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\MainWindow.g.cs
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\App.g.cs
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\Model_data_MarkupCompile.cache
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\Model_data_MarkupCompile.lref
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\MainWindow.baml
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\Model_data.g.resources
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\Model_data.Properties.Resources.resources
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\Model_data.csproj.GenerateResource.cache
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\Model_data.csproj.CoreCompileInputs.cache
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\Model_data.csproj.CopyComplete
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\Model_data.exe
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Model_data\obj\Debug\Model_data.pdb

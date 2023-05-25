@@ -1,69 +1,58 @@
-//Создание БД//
-create table import_files_x (
-  id int primary key not null,
-    name varchar (128) not null,
-  create_date date not null
+CREATE TABLE import_file_x (
+    id INTEGER PRIMARY KEY NOT NULL,
+    file_name VARCHAR(128) NOT NULL,
+    create_date DATE NOT NULL
 );
 
-create table import_files_y (
-  id int not null unique references import_files_x (id),
-    name varchar (128) not null,
-  create_date date not null
+CREATE TABLE import_file_y (
+    id INTEGER NOT NULL UNIQUE REFERENCES import_file_x (id),
+    file_name VARCHAR(128) NOT NULL,
+    create_date DATE NOT NULL
 );
 
-create table detectors (
-  id int primary key not null,
-  name varchar(20) not null
+CREATE TABLE bool_measure (
+  row_id INTEGER NOT NULL,
+  detector_id INTEGER NOT NULL,
+  file_id INTEGER NOT NULL,
+  defect_state BOOLEAN NOT NULL,
+  PRIMARY KEY(row_id, detector_id, file_id),
+  FOREIGN KEY (file_id) REFERENCES import_file_y(id)
 );
 
-create table array_measures (
-  id int primary key not null,
-  id_files int not null,
-  foreign key (id_files) references import_files_y(id)
+CREATE TABLE array_measure (
+  row_id INTEGER NOT NULL,
+  detector_id INTEGER NOT NULL,
+  file_id INTEGER NOT NULL,
+  time_values real[] NOT NULL,
+  amplitude_values real[] NOT NULL,
+  PRIMARY KEY(row_id, detector_id, file_id),
+  FOREIGN KEY (file_id) REFERENCES import_file_x(id),
+  FOREIGN KEY (row_id, detector_id, file_id) REFERENCES bool_measure(row_id, detector_id, file_id)
 );
 
-create table detector_in_measure (
-  id int primary key not null,
-  id_measure int not null,
-  id_detector int not null,
-  time_values real[] not null,
-  aplitude_values real[] not null,
-  foreign key (id_measure) references array_measures(id),
-  foreign key (id_detector) references detectors(id)
-);
+// Запросы на вставку данных //
 
-create table bool_measures (
-  id int primary key not null,
-  id_files int not null,
-  foreign key (id_files) references import_files_x(id)
-);
+INSERT INTO public.import_file_x (id, file_name, create_date) VALUES (%s, %s, %s)
 
-create table detector_in_bool_measure (
-  id int primary key not null,
-  id_measure int not null,
-  id_detector int not null,
-  defect_state bool not null,
-  foreign key (id_detector) references detectors(id),
-  foreign key (id_measure) references bool_measures(id)
-)
+INSERT INTO public.import_file_y (id, file_name, create_date) VALUES (%s, %s, %s)
 
-//Вставка данных//
-INSERT INTO import_files_x (name, create_date) VALUES (%s, %s)
-INSERT INTO import_files_y (name, create_date) VALUES (%s, %s)
-INSERT INTO array_measures (id_files) VALUES (%s)
-INSERT INTO detector_in_measure (id_measure, id_detector, time_values, amplitude_values) VALUES (%s, %s, %s, %s)
-INSERT INTO detectors (name) VALUES (%s)
-INSERT INTO detector_in_bool_measure (id_measure, id_detector, defect_state) VALUES (%s, %s, %s)
-INSERT INTO bool_measures (id_files) VALUES (%s)
+INSERT INTO public.bool_measure  
+    (row_id, detector_id, file_id, defect_state) VALUES (%s, %s, %s, %s)
 
-//SQL запрос//
-SELECT x.name, y.name, d.name, dim.id_measure, dim.time_values, dim.aplitude_values, dbm.defect_state
-FROM import_files_x x
-LEFT JOIN import_files_y y ON x.id = y.id
-LEFT JOIN array_measures am ON y.id = am.id_files
-LEFT JOIN detector_in_measure dim ON am.id = dim.id_measure
-LEFT JOIN detectors d ON dim.id_detector = d.id
-LEFT JOIN bool_measures bm ON x.id = bm.id_files
-LEFT JOIN detector_in_bool_measure dbm ON bm.id = dbm.id_measure
-WHERE x.name = 'x_file_1'
-ORDER BY d.name
+INSERT INTO public.array_measure
+    (row_id, detector_id, file_id, time_values, amplitude_values) VALUES (%s, %s, %s, %s, %s)
+
+// Запросы на получение данных //
+
+SELECT import_file_y.file_name, bool_measure.row_id,
+		bool_measure.detector_id, bool_measure.defect_state
+	FROM
+	bool_measure JOIN import_file_y 
+	ON bool_measure.file_id = import_file_y.id;
+
+SELECT import_file_x.file_name, array_measure.row_id,
+		array_measure.detector_id, array_measure.time_values,
+		array_measure.amplitude_values
+	FROM
+	array_measure JOIN import_file_x 
+	ON array_measure.file_id = import_file_x.id;

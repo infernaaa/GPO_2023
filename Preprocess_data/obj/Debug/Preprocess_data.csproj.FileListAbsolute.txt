@@ -14,3 +14,24 @@ C:\Users\infernaaa\Desktop\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data.cs
 C:\Users\infernaaa\Desktop\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data.csproj.CoreCompileInputs.cache
 C:\Users\infernaaa\Desktop\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data.exe
 C:\Users\infernaaa\Desktop\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data.pdb
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\bin\Debug\Preprocess_data.exe.config
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\bin\Debug\Preprocess_data.exe
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\bin\Debug\Preprocess_data.pdb
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data.csproj.AssemblyReference.cache
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\MainWindow.g.cs
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\App.g.cs
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data_MarkupCompile.cache
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data_MarkupCompile.lref
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\MainWindow.baml
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data.g.resources
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data.Properties.Resources.resources
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data.csproj.GenerateResource.cache
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data.csproj.CoreCompileInputs.cache
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data.exe
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data.pdb
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data.csproj.SuggestedBindingRedirects.cache
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Coding Projects\Visual Studio\c#\GPO_2023\Preprocess_data\obj\Debug\Preprocess_data.csproj.CopyComplete

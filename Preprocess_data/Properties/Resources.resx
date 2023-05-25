@@ -117,11 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="prepare_X_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\prepare_X_data.py;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="prepare_Y_data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\prepare_Y_data.py;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="instruction" xml:space="preserve">
+    <value>Шаг 1. Нажмите на кнопку &lt;Обзор&gt;. В открывшемся окне найдите нужную папку, в которой выберите интересующий файл с расширением .csv и нажмите кнопку &lt;Открыть&gt;. После выбора необходимого файла для обработки путь к нему отобразится в текстовом поле &lt;Путь к обрабатываемому файлу&gt;. В открывшемся окне будут показаны только файлы с расширением.csv, файлы иного расширения не будут отображены.
+
+Шаг 2. Из списка, расположенного ниже, необходимо выбрать нужный тип данных: входные или выходные. Можно выбрать только один вариант из предложенных.Выбор другого варианта приведёт к отмене варианта, который был выбран до этого действия.
+
+Шаг 3. Нажмите на кнопку &lt;Обработать файл&gt;. Появится всплывающие окно, что данные успешно обработаны. Если в текстовом поле &lt;Путь к обрабатываемому файлу&gt; допущена ошибка в написании названия, пути или расширения обрабатываемого файла, то выйдет окно с оповещением об ошибке. В таком случае необходимо повторить шаги для выбора файла для обработки данных(назад к шагу 1).
+
+Шаг 4. После обработки файла откроется окно с графиком, представляющий обработанные данные. Для того чтобы передвинуть файл по горизонтали и / или вертикали необходимо навести курсор мыши на график и зажать левую кнопку мыши. Для того чтобы изменить масштаб графика необходимо навести курсор мыши на график, прокручивая колёсико мыши, выбрать подходящий масштаб.</value>
   </data>
 </root>
