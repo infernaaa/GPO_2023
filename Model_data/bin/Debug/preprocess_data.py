@@ -3,11 +3,15 @@ import pandas as pd
 import numpy as np
 import psycopg2
 import datetime
+from tensorflow import keras
 
 print('Библиотеки подключены')
 
-for i,item in zip(range(len(sys.argv)),sys.argv):
-	print(f"Arg [{i}]: ", item)
+def to_str(x):
+  return np.array2string(x, precision=4, separator=',',floatmode='fixed')
+
+#for i,item in zip(range(len(sys.argv)),sys.argv):
+#    print(f"Arg [{i}]: ", item)
 
 # Константы пути
 
@@ -28,13 +32,13 @@ schema_name = 'public'
 
 get_table_query = """
 SELECT array_measure.time_values, array_measure.amplitude_values
-	FROM
-	array_measure JOIN import_file_x
-	ON array_measure.file_id = import_file_x.id
-	WHERE
-		import_file_x.id = %s,
-		array_measure.row_id = %s,
-		array_measure.detector_id = %s;"""
+    FROM
+    array_measure JOIN import_file_x
+        ON array_measure.file_id = import_file_x.id
+    WHERE
+        array_measure.file_id = %s AND
+        array_measure.row_id = %s AND
+        array_measure.detector_id = %s;"""
 
 print('Подключение к бд')
 
@@ -55,10 +59,16 @@ with conn:
     with conn.cursor() as cursor:
         cursor.execute(get_table_query,
                        (id_file, id_row, id_detector))
-	    result = cursor.fetchall()
+        result = cursor.fetchall()
 
 
-print(result)
+print(to_str(np.array(result[0][0])))
+
+model = keras.models.load_model('NetWork_64_to_64_loss_0,1126')
+
+res = model.predict(np.expand_dims(result[0][0],axis=0))
+
+print(to_str(np.array(res[0])))
 
 conn.commit()
 cursor.close()
