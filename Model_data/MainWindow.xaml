@@ -29,13 +29,14 @@
                     <RowDefinition Height="Auto"/>
                     <!-- Вторая строка содержит кнопку -->
                 </Grid.RowDefinitions>
-                <Label Content="Имя файла" Grid.Row="0" Margin="0,13,0,17" Grid.RowSpan="2"/>
-                <TextBox Grid.Row="1" x:Name="TextBox_File_Name" Margin="0,26,10,-22" IsReadOnly="True"/>
+                <Label Content="Номер файла" Grid.Row="0" Margin="0,13,0,17" Grid.RowSpan="2"/>
+                <TextBox Grid.Row="1" x:Name="TextBox_File_Name" Margin="0,26,10,-22" IsReadOnly="False"/>
                 <Label Content="Номер детектора" Grid.Row="1" Margin="0,90,0,-90"/>
-                <TextBox Grid.Row="1" x:Name="TextBox_Number_Detector" Margin="0,133,10,-133"  IsReadOnly="True"/>
+                <TextBox Grid.Row="1" x:Name="TextBox_Number_Detector" Margin="0,133,10,-133"  IsReadOnly="False"/>
                 <Label Content="Номер строки" Grid.Row="1" Margin="0,196,0,-196"/>
-                <TextBox Grid.Row="1"  x:Name="TextBox_Number_Str" Margin="0,226,10,-226" IsReadOnly="True"/>
-
+                <TextBox Grid.Row="1"  x:Name="TextBox_Number_Str" Margin="0,226,10,-226" IsReadOnly="False"/>
+                <Button  Click="Button_Click"
+                         Margin="0,290,0,-284" Grid.Row="1"> Обработать</Button>
             </Grid>
         </Grid>
 

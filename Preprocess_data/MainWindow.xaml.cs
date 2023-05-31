@@ -94,8 +94,7 @@ namespace Preprocess_data
         private void Window_Initialized(object sender, EventArgs e)
         {
             Instruction.Text = Preprocess_data.Properties.Resources.instruction;
-            PathToTargetFolder.Text = "C:\\Users\\Eugen\\JupyterNotebook\\GPO_2022_TimeSeriesForecast" +
-                "\\Projects (Oil and Gas ones)\\Gas data research\\data\\Original data\\Run1";
+            PathToTargetFolder.Text = "Выберите подходящую папку";
         }
 
 
@@ -118,7 +117,7 @@ namespace Preprocess_data
                 Process process = new Process();
                 ProcessStartInfo startInfo = new ProcessStartInfo();
                 startInfo.FileName = "CMD.exe";
-                startInfo.Arguments = "/C Python311//python.exe " + scriptFileName +
+                startInfo.Arguments = "/C python " + scriptFileName +
                                                     " \"" + dataFilePath +
                                                     "\" \"" + defectsFilePath + "\"";
                 process.StartInfo = startInfo;
@@ -128,8 +127,8 @@ namespace Preprocess_data
 
                 process.WaitForExit();
 
-                MessageBox.Show(process.StandardOutput.ReadToEnd());
-                
+                MessageBox.Show(process.StandardOutput.ReadToEnd());// для второго файла поменять слеш на пробел
+                // process.StandardOutput.ReadToEnd() вывыодит массив
             }
             catch (Exception e_i)
             {

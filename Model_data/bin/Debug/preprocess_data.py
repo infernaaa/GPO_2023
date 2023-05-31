@@ -5,7 +5,7 @@ import psycopg2
 import datetime
 from tensorflow import keras
 
-print('Библиотеки подключены')
+#print('Библиотеки подключены')
 
 def to_str(x):
   return np.array2string(x, precision=4, separator=',',floatmode='fixed')
@@ -40,7 +40,7 @@ SELECT array_measure.time_values, array_measure.amplitude_values
         array_measure.row_id = %s AND
         array_measure.detector_id = %s;"""
 
-print('Подключение к бд')
+#print('Подключение к бд')
 
 # подключение к бд
 conn = psycopg2.connect(database=db_name,
@@ -69,9 +69,9 @@ model = keras.models.load_model('NetWork_64_to_64_loss_0,1126')
 res = model.predict(np.expand_dims(result[0][0],axis=0))
 
 print(to_str(np.array(res[0])))
-
+print('Данные успешно прочитаны')
 conn.commit()
 cursor.close()
 conn.close()
 
-print('Данные успешно прочитаны')
+
