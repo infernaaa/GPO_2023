@@ -124,20 +124,17 @@ namespace Model_data
                 process.StartInfo.RedirectStandardOutput = true;
                 process.StartInfo.UseShellExecute = false;
                 process.Start();
-                StreamReader reader = process.StandardOutput;
                 
                 process.WaitForExit();
-                string output = reader.ReadToEnd();
-                MessageBox.Show(output);// для второго файла поменять слеш на пробел
-                temp = output;
-                Console.WriteLine(temp);
+                MessageBox.Show(process.StandardOutput.ReadToEnd());
+
             }
             catch (Exception e_i)
             {
                 MessageBox.Show(e_i.Message);
             }
             
-            Console.WriteLine("дошли до конца функции");
+            /*Console.WriteLine("дошли до конца функции");
             double[] dataX = new double[32];
             double[] dataY = new double[32];
             string input = temp;
@@ -177,7 +174,7 @@ namespace Model_data
             HighlightedPoint.IsVisible = false;
             wpf_plot.MouseMove += formsPlot1_MouseMove;
             wpf_plot.RightClicked += DeployCustomMenu;
-            wpf_plot.Refresh();
+            wpf_plot.Refresh();*/
             return;
         }
         

@@ -64,14 +64,22 @@ with conn:
 
 print(to_str(np.array(result[0][0])))
 
-model = keras.models.load_model('NetWork_64_to_64_loss_0,1126')
+model = keras.models.load_model('NetWork_64_to_64_loss_0,1097')
 
-res = model.predict(np.expand_dims(result[0][0],axis=0))
+# Создание и настройка колбэков
+callback_list = [] # массив колбэков до подачи в колбек "callbacklist"
+
+FIT_callback_list = keras.callbacks.CallbackList(
+            callbacks = callback_list,
+            add_history = False,
+            add_progbar = False,
+            model = model
+            )
+
+res = model.predict(np.expand_dims(result[0][0],axis=0), callbacks = FIT_callback_list)
 
 print(to_str(np.array(res[0])))
-print('Данные успешно прочитаны')
+#print('Данные успешно прочитаны')
 conn.commit()
 cursor.close()
 conn.close()
-
-
